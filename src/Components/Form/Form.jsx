@@ -28,13 +28,14 @@ export const Form = (props) => {
                 <TbArrowBackUp onClick={()=>closeModal()} id="arrowBack"/>
             </div>
         </div>
-        <div className="inputs">
-        <Input placeholder="Descrição" type="text" legend="Sua Tarefa" value={description} onInput={(e)=>setDescription(e.target.value)} ></Input>
+        <div className="inputs">            
+            <Input placeholder="Descrição" type="text" legend="Sua Tarefa" value={description} onInput={(e)=>setDescription(e.target.value)} ></Input>
 
-        <Input placeholder="Prazo" type="date" legend="Prazo" value={date} onInput={(e)=>setDate(e.target.value)}></Input>
+            <Input placeholder="Prazo" type="date" legend="Prazo" value={date} onInput={(e)=>setDate(e.target.value)}></Input>
 
-        <Input placeholder="Status" type="select" legend="Selecione o Status" onChange={(e)=>setStatus(e.target.value)}></Input>
+            <Input placeholder="Status" type="select" legend="Selecione o Status" onChange={(e)=>setStatus(e.target.value)}></Input>
         </div>
+
         <Button type="submit" onClick={()=>handleDataNAddTask()}>Inserir Tarefas</Button>
 
     </S.Form>
