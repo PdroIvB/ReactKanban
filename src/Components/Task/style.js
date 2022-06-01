@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Task = styled.div`
+    line-height: 1.75rem;
     display: flex;
     flex-direction: column;
     padding: 10px;

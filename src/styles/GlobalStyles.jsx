@@ -42,8 +42,14 @@ section {
     font-weight: 700;
     color:#26038A;
     border-bottom: 2px solid #26038A;
-    width: 95vw;
+    width: 100%;
 }
+
+.legend {
+        align-self: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
 
 label {
     font-size: 20px;
@@ -55,6 +61,10 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.sideIcons {
+    align-self: center;
 }
 
 .react-modal-overlay {
@@ -80,7 +90,5 @@ label {
         position: relative;
         border-radius: 10px;
         overflow: hidden;
-
     }
-
 `;

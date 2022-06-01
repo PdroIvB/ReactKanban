@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { Button } from "../Button/Button"
 import { Input } from "../Input/Input"
 import { TaskContext } from "../../Providers/TaskContext"
+import { TbArrowBackUp } from "react-icons/tb";
 import * as S from "./style"
 
 export const Form = (props) => {
@@ -13,13 +14,19 @@ export const Form = (props) => {
         setDescription,
         setStatus,
         handleDataNAddTask,
+        closeModal
     } = useContext(TaskContext);
 
 
 
     return <S.Form>
         <div className="legend">
-            <h1>{props.children}</h1>
+            <div>
+                <h1>{props.children}</h1>
+            </div>
+            <div className="sideIcons">
+                <TbArrowBackUp onClick={()=>closeModal()} id="arrowBack"/>
+            </div>
         </div>
         <div className="inputs">
         <Input placeholder="Descrição" type="text" legend="Sua Tarefa" value={description} onInput={(e)=>setDescription(e.target.value)} ></Input>

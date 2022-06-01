@@ -44,7 +44,8 @@ export const TaskProvider = (props) => {
             let allTasks = tasksArray;
             allTasks.push(newTask);
             addTaskNoArray(allTasks);
-            clearInputs()
+            clearInputs();
+            closeModal();
         }
     }
 
@@ -60,9 +61,10 @@ export const TaskProvider = (props) => {
     }
 
     function editTask (index) {
-        setDescription(tasksArray[index].description)
-        setDate(tasksArray[index].date)
-        setStatus(tasksArray[index].status)
+        setDescription(tasksArray[index].description);
+        setDate(tasksArray[index].date);
+        setStatus(tasksArray[index].status);
+        openModal();
 
         deleteTask(index)
     }

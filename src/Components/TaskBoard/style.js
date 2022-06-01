@@ -5,12 +5,14 @@ export const TaskBoard = styled.div`
     flex-direction:column;
     width: inherit;
 
-    .legend {
-        align-self: center;
-    }
-
     .board {
         display: flex;
         justify-content: space-around;
+    }
+
+    #addTaskIcon {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 3rem;
     }
 `

@@ -17,7 +17,6 @@ function App() {
                 <div className="title">
                     <h1>Gerenciador de Tarefas - Kanban</h1>
                 </div>
-                <Form>Cadastrar uma Tarefa</Form>
                 <TaskBoard>Quadro de Tarefas</TaskBoard>
                 <NewModal isOpen={openModal}></NewModal>
             </section>
