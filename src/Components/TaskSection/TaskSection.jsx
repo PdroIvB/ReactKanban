@@ -1,15 +1,18 @@
 import { useContext } from "react"
 import { TaskContext } from "../../Providers/TaskContext"
 import { Task } from "../Task/Task"
+import {IoMdAddCircleOutline} from "react-icons/io"
 import * as S from "./style"
 
 export const TaskSection = (props) => {
 
-    let {tasksArray} = useContext(TaskContext)
+    let {tasksArray, openModal} = useContext(TaskContext)
 
     return <S.TaskSection color={props.color}>
         <div className="sectionTitle">
-            <h2>{props.title}</h2>
+            <div>
+                <h2>{props.title}</h2>
+            </div>
         </div>
         {
             tasksArray.map((task, index) => {

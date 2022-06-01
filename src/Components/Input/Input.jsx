@@ -4,7 +4,7 @@ import * as S from "./style"
 
 export const Input = (props) => {
 
-    const{status} = useContext(TaskContext)
+    const{status, sectionsArray} = useContext(TaskContext)
 
     if (props.type !== "select"){
     return(
@@ -19,10 +19,12 @@ export const Input = (props) => {
         <div className="input">
             <label>{props.legend}</label>
             <S.SelectInput onChange={props.onChange} value={status} >
-                <option value="-1">{props.placeholder}</option>
-                <option value="todo">A Fazer</option>
-                <option value="doing">Fazendo</option>
-                <option value="done">Finalizado</option>
+            <option value="-1">{props.placeholder}</option>
+                {
+                    sectionsArray.map((section,index)=>{
+                        return <option value={section.status} key={index}>{section.title}</option>
+                    })
+                }
             </S.SelectInput>
         </div>
     )

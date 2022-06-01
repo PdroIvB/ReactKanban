@@ -11,6 +11,12 @@ export const TaskSection = styled.div`
         border-radius: 5px 5px 0px 0px;
         text-align: center;
         color: white;
-        background-color: ${(props) => props.color}
+        background-color: ${(props) => props.color};
+
+        align-self: center;
+        display: flex;
+        justify-content: space-evenly;
     }
+
+    
 `

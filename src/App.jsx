@@ -1,5 +1,5 @@
-import { Form } from "./Components/Form/Form.jsx";
-import { NewModal } from "./Components/Modal/Modal.jsx";
+import { TaskModal } from "./Components/TaskModal/TaskModal.jsx";
+import { SectionModal } from "./Components/SectionModal/SectionModal.jsx";
 import { TaskBoard } from "./Components/TaskBoard/TaskBoard.jsx";
 import Modal from "react-modal"
 import { useContext } from "react";
@@ -9,7 +9,7 @@ Modal.setAppElement("#root")
 
 function App() {
 
-    const{openModal} = useContext(TaskContext)
+    const{openTaskModal,openSectionModal} = useContext(TaskContext)
 
     return (
         <>
@@ -18,7 +18,8 @@ function App() {
                     <h1>Gerenciador de Tarefas - Kanban</h1>
                 </div>
                 <TaskBoard>Quadro de Tarefas</TaskBoard>
-                <NewModal isOpen={openModal}></NewModal>
+                <TaskModal isOpen={openTaskModal}/>
+                <SectionModal isOpen={openSectionModal}/>
             </section>
             
         </>

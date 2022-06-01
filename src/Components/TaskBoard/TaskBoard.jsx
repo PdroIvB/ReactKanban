@@ -6,7 +6,7 @@ import * as S from "./style"
 
 export const TaskBoard = (props) => {
 
-    const{openModal} = useContext(TaskContext)
+    const{openTaskModal, sectionsArray, openSectionModal} = useContext(TaskContext)
 
     return <S.TaskBoard>
         <div className="legend">
@@ -14,13 +14,16 @@ export const TaskBoard = (props) => {
                 <h1>{props.children}</h1>
             </div>
             <div className="sideIcons">
-                <IoMdAddCircleOutline onClick={()=>openModal()} id="addTaskIcon"/>
+            <p>Adicionar Tarefa</p><IoMdAddCircleOutline onClick={()=>openTaskModal()} id="addTaskIcon"/>
+            <p>Adicionar Seção</p><IoMdAddCircleOutline onClick={()=>openSectionModal()} id="addSectionIcon"/>
             </div>
         </div>
         <div className="board">
-        <TaskSection title="A Fazer" status="todo" color={"#D21B1B"}/>
-        <TaskSection title="Fazendo" status="doing" color={"#DFD600"}/>
-        <TaskSection title="Finalizado" status="done" color={"#0CE155"}/>
+            {
+                sectionsArray.map((section, index)=>{
+                    return <TaskSection title={section.title} status={section.status} color={section.color} key={index}/>
+                })
+            }
         </div>
     </S.TaskBoard>
 }

@@ -10,6 +10,14 @@ export const TaskBoard = styled.div`
         justify-content: space-around;
     }
 
+    .sideIcons {
+        display: flex;
+    }
+
+    p {
+        padding-top: 7px;
+    }
+
     #addTaskIcon {
         width: 3rem;
         height: 3rem;
